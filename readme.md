@@ -2,6 +2,14 @@
 
 **HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the multinational norms.**
 
+Descriptive parameter surface: 
+
+![Descriptive parameter surface.png](image/readme/1641718734951.png "Descriptive parameter surface")
+
+Z socre values:
+
+![Z socre values](image/readme/1641719353193.png "Z socre values")
+
 ## Installation
 
 1. Extract the ZIP file (or clone the git repository) somewhere you can easily reach it.
@@ -68,5 +76,3 @@ Create Time: 2021
 Copyright(c): 2020-2022 Ying Wang, <yingwangrigel@gmail.com>; Min Li, <minli.231314@gmail.com>; Pedro Antonio Valdés-Sosa <pedro.valdes@neuroinformatics-collaboratory.org>
 
 Joint China-Cuba LAB, UESTC, Chengdu, China.
-
-
