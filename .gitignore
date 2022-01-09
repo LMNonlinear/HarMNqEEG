@@ -57,3 +57,6 @@ __pycache__
 
 *.json
 *.prj
+
+
+!image/readme/*.png
