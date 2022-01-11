@@ -2,7 +2,7 @@
 
 **HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the multinational norms.**
 
-Descriptive parameter surface: 
+Descriptive parameter surface (DPs):
 
 ![Descriptive parameter surface.png](image/readme/1641718734951.png "Descriptive parameter surface")
 
@@ -26,8 +26,8 @@ Folder main contains the main process code including:
 
 notes:
 
-1. check the electrodes used in  data_gatherer.m
-2. you can directly create the meta-information table when you run the data_gatherer.m loop according to the example
+1. check the electrodes used in data_gatherer.m
+2. create the meta-information table according to the example
 
 *.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
 
@@ -35,7 +35,7 @@ notes:
 
 **step 1**: run step1_preprocess_`<typeDPs>`.m  to get the DPs
 
-**step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs.
+**step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs
 
 **step 3**: run step3_visualize_`<typeDPs>`.m to visualize the scatter plot of z-scores
 
