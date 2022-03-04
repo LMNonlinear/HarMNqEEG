@@ -6,10 +6,16 @@ path_out='.\result\';
 batchs={'study'};
 
 mnhs=load(path_norm,'tregs','level','resp','opt');
-mnhs.path_csv=path_Dps;
-mnhs=mnh_create_predict(mnhs);
-mnhs.tag=['zscore'];
+
+mnhs.batch={'study'};
+mnhs.path_table=path_Dps;
 mnhs.path_out=path_out;
+mnhs.reRefBatch={'Brb2_DEDAAS_Malnutrition','DEDAAS Barbados1978'};
+mnhs.tag=['zscore'];
+
+mnhs=mnh_create_predict(mnhs);
+
+
 %%
 mnhs=MnhCaller(mnhs);
 

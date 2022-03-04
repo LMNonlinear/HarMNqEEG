@@ -9,7 +9,7 @@ function mnhs=MnhCaller(mnhs)
 dbstop if error
 %% record
 diary off
-[~,filename]=fileparts(mnhs.path_csv);
+[~,filename]=fileparts(mnhs.path_table);
 filename=[mnhs.path_out,filesep,filename,'_',mnhs.tag];
 diaryfile=[filename,'_diary.txt'];
 test_folder(diaryfile);

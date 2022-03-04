@@ -66,13 +66,13 @@ if find_char(level,'global')
 end
 header2import=cat(1,inform(:),level(:),factor(:),resp(:),mnhs.batch(:));
 
-opts = detectImportOptions(mnhs.path_csv);
+opts = detectImportOptions(mnhs.path_table);
 if isempty(find_char(opts.SelectedVariableNames,'disease'))
     iddisease=find_char(header2import,'disease');
     header2import(iddisease)=[];
 end
 opts.SelectedVariableNames = header2import ;
-mnhs.T=readtable(mnhs.path_csv,opts);
+mnhs.T=readtable(mnhs.path_table,opts);
 
 %%
 if ~isempty(mnhs.reRefBatch)

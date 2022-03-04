@@ -11,9 +11,9 @@ mnhs=load(path_norm,'tregs','level','resp','opt');
 
 
 mnhs.batch={'study'};
-mnhs.path_csv=path_Dps;
+mnhs.path_table=path_Dps;
 mnhs.path_out=path_out;
-mnhs.reRefBatch={'DEDAAS Barbados1978','BrainAmpDC Chengdu'};
+mnhs.reRefBatch={'Brb2_DEDAAS_Malnutrition','DEDAAS Barbados1978'};
 mnhs.tag=['zscore'];
 
 mnhs=mnh_create_predict(mnhs);
