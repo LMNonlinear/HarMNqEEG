@@ -1,8 +1,8 @@
-% 1-get EEG data form BIDS; 2-crossM
-% take care of the any time for me is ok
-% take care of the input type of metadata
-% take care of the electrodes name and order
-% take care of the sex used, better use F/M
+% take care of the format of the raw data;
+%                         the input type of metadata
+%                         the electrodes name and order
+%                         the sex used, better use F/M
+% encrypt the subject name before this script
 clear;clc;
 country='Malaysia';
 inform_path='.\inform\';

@@ -22,36 +22,78 @@ Z socre values:
 
 Folder main contains the main process code including:
 
-**step 0**: use data_gatherer.m [1] to calculate cross-spectrum
+Generate corss-spectrum tensor use the code data_gatherer.m [1].
+
+The  data_gatherer.m and one example named generate_cross_spectrum.m in the external folder.
 
 notes:
 
-1. check the electrodes used in data_gatherer.m
-2. create the meta-information table according to the example
+1. check the electrodes name and electrodes order used in data_gatherer.m
+2. names shoule be encrypted before generate the corss-spectrum tensor.
 
-*.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
+**step 0**: generate metadata table based on the calcuated cross-spectrum tensor.
 
-3. names in the data we provide has been encrypted with argon2.
+input: corss-spectrum tensor path
+output: metadata table Ⅰ
+
+you can chekc the example with: *.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
 
 **step 1**: run step1_preprocess_`<typeDPs>`.m  to get the DPs
 
+input: metadata table  Ⅰ
+output: DPs table Ⅱ which including log-spectrum /Riemannian vectorized corss-spectrum DPs +meta data
+
 **step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs
 
+input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)
+output: z-score table Ⅲ which including  z-scores (global z-scores) and cz-scores (batch corrected z-scores)
+
 **step 3**: run step3_visualize_`<typeDPs>`.m to visualize the scatter plot of z-scores
+
+input:  z-score table Ⅲ
+output: z-score scatter plot
 
 Note:
 
 1. `<typeDPs>` including traditional log-spectrum DPs (`log`) and Hermitian Riemannian DPs (`riemlogm`).
 2. In **step 2**, need to select one closed study for calculating batch harmonized z-scores and DPs.
+   The name of existed batch reference are:
 
-## Example Data Description
+   'ANTNeuro Malaysia'
+   'BrainAmpDC Chengdu'
+   'BrainAmpMRplus Chongqing'
+   'BrainAmpMRplus Germany'
+   'DEDAAS Barbados1978'
+   'DEDAAS NewYork'
+   'EGI Zurich'
+   'Medicid-3M Cuba1990'
+   'Medicid-4 Cuba2003'
+   'Medicid-5 CHBMP'
+   'NihonKohden Bern'
+   'actiChamp Russia'
+   'neuroscan Colombia'
+   'nvx136 Russia'
+
+## Example Data Description'ANTNeuro Malaysia'
+
+'BrainAmpDC Chengdu'
+'BrainAmpMRplus Chongqing'
+'BrainAmpMRplus Germany'
+'DEDAAS Barbados1978'
+'DEDAAS NewYork'
+'EGI Zurich'
+'Medicid-3M Cuba1990'
+'Medicid-4 Cuba2003'
+'Medicid-5 CHBMP'
+'NihonKohden Bern'
+'actiChamp Russia'
+'neuroscan Colombia'
+'nvx136 Russia'
 
 The data is available [here](https://doi.org/10.7303/syn26712979 "Data on synapse"), extract data folder to the root of the repository. The data include:
 
 1. **example**:
-   a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which got by running **step 0**.
-
-   b. [DataInfo_Barbados1978Malnutrition_44.csv]() contains metadata including `age`, `frequency`, `sex`, `country`, `device`,  `reference`, `EEG epoch` and the `path` of cross-spectrum. and this table you can create when calculate the cross-spectrum tensor in **step 0**.
+   a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which got by running **the data_gatherer.m**
    Note: take care with the EEG epoch which will use in step2 for Hermitian positive defined (HPD) matrix regularization[3].
    the path of the cross-spectrum should include the path and name of .mat file which will be used for load data in **step 2**.
 2. **norm**:

@@ -10,7 +10,7 @@ mnhs=load(path_norm,'tregs','level','resp','opt');
 mnhs.batch={'study'};
 mnhs.path_table=path_Dps;
 mnhs.path_out=path_out;
-mnhs.reRefBatch={'Brb2_DEDAAS_Malnutrition','DEDAAS Barbados1978'};
+mnhs.reRefBatch={'Brb2_DEDAAS_Malnutrition','DEDAAS Barbados1978'};   % study name and batch refrence name
 mnhs.tag=['zscore'];
 
 mnhs=mnh_create_predict(mnhs);
