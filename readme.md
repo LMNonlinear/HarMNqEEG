@@ -2,7 +2,7 @@
 
 **HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the multinational norms.**
 
-Descriptive parameter surface: 
+Descriptive parameter surface:
 
 ![Descriptive parameter surface.png](image/readme/1641718734951.png "Descriptive parameter surface")
 
@@ -46,7 +46,7 @@ Note:
 
 ## Example Data Description
 
-The data is available [here](), extract data folder to the root of the repository. The data include:
+The data is available [here](https://doi.org/10.7303/syn26712979 "Data on synapse"), extract data folder to the root of the repository. The data include:
 
 1. **example**:
    a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which got by running **step 0**.
