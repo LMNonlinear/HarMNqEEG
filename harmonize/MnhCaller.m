@@ -22,6 +22,11 @@ if isfield(mnhs,'only_criteria')&& mnhs.only_criteria
     mnhs.T=[];
     mnhs.tregs=[];
 end
+%% change the batch back to the orignal from the refrence batch
+if ~isempty(mnhs.reRefBatch)
+    mnhs.Ttest=asnarray2table(mnhs.Ttest,{'orignalBatch',setdiff(unique(mnhs.Ttest.orignalBatch),{''})},mnhs.batch,mnhs.reRefBatch(:,1));
+end
+
 %% save result
 filename=[filename,'.csv'];
 writetable(mnhs.Ttest,filename);

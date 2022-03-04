@@ -1,8 +1,5 @@
 function T=asnarray2table(T,cond,varname,arr)
 
-% [icol,T]=get_varidx(T,opt.resp_mu,regs.dtype);
-% [icol,T]=get_varidx(T,opt.resp_mu);
-
  %%
  %     Author: Ying Wang, Min Li
  %     Create Time: 2021
@@ -11,7 +8,6 @@ function T=asnarray2table(T,cond,varname,arr)
  
 
 [~,irow]=get_subtable(T,cond);
-% [T,idx]=get_varidx(T,varname,arr(1));
 
 if ischar(varname)
     varname={varname};
