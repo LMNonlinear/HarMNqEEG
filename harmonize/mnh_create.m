@@ -17,8 +17,8 @@ end
 if ~isfield(mnhs,'batch')
     mnhs.batch={'study'};
 end
-if ~isfield(mnhs,'ref')
-    mnhs.ref=[];
+if ~isfield(mnhs,'reRefBatch')
+    mnhs.reRefBatch=[];
 end
 if ~isfield(mnhs,'respType')
     if isfield(mnhs,'resp')&& ~isempty(mnhs.resp)
@@ -75,9 +75,11 @@ opts.SelectedVariableNames = header2import ;
 mnhs.T=readtable(mnhs.path_csv,opts);
 
 %%
-if ~isempty(mnhs.ref)
-    disp(['use ',mnhs.ref(:),'as reference, replace information in T for calculation' ])
-    mnhs.T=asnarray2table(mnhs.T,[],mnhs.batch,mnh.ref);
+if ~isempty(mnhs.reRefBatch)
+    disp(['use ',mnhs.reRefBatch{:,1},'as the reference of ',mnhs.reRefBatch{:,2},', replace information in T for calculation' ])
+    % only support one batch model yet
+    mnhs.T=asnarray2table(mnhs.T,{mnhs.batch{1},mnhs.reRefBatch{:,1}},'orignalBatch',mnhs.reRefBatch(:,1));
+    mnhs.T=asnarray2table(mnhs.T,{mnhs.batch{1},mnhs.reRefBatch{:,1}},mnhs.batch,mnhs.reRefBatch(:,2));
 end
 
 
