@@ -10,12 +10,12 @@
 %===================================================
 
 
+path_data='.\data\example\BarbadosMalnutrition';     % cross-spectrum tensor path
 metatable_name='BarbadosMalnutrition';               % metatable name
-data_path='.\data\example\BarbadosMalnutrition';     % cross-spectrum tensor path
 path_out='.\result';
 pathology='Malnutrition';                            % pathology of the dataset
 
-T=genMetaDataTable(data_path,pathology);
+T=genMetaDataTable(path_data,pathology);
 writetable(T,[path_out,filesep,metatable_name,'.xlsx']);
 
 

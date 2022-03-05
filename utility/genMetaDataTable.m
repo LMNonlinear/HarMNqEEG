@@ -9,6 +9,9 @@ function T=genMetaDataTable(data_path,pathology)
 % date: 2/19/2021
 %===================================================
 
+if nargin<2 || isempty(pathology)
+    pathology=[];
+end
 
 
 subjList = dir([data_path, '/*.mat']);              % List all .mat files
