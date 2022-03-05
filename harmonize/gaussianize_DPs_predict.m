@@ -1,5 +1,28 @@
 function file_DPs_table=gaussianize_DPs_predict(path_table,path_save,refM,typeLog,steps,dataFilter,batch,tag)
- %%
+
+%% gaussianize_DPs_predict: gaussianize incoming spectrum 
+% path_table: path of meta info table which include the path of .mat data which gathered by data_gather.m
+%                refer to the step0 to generate this table
+%
+% path_save: path of folder to save the result
+%
+% refM: the geometric mean for gaussianize incoming cross-spectrum
+% 
+% typeLog: 'log' for spectrum, 
+%          'logm' for cross-spectrum with euclidean metric
+%          'riemlog' for cross-spectrum with riemannian metric
+%           other gaussianize method not support yet
+%
+% steps: steps and order for the preprocessing of the cross spectrum,
+%         default {'ave','reg','gsf'} average refrence->regularization->global scale factor correction
+%
+% dataFilter: screen out some data with pair {'variableName','variableValue','variableName','variableValue', ...}
+%
+% batch: batch wise geometric mean, default is empty which use global geometric mean
+%
+% tag: The tag include filename of output table to distinguish the project with others. 
+
+%%
  %     Author: Ying Wang, Min Li
  %     Create Time: 2021
  %     Copyright(c): 2020-2022 Ying Wang, yingwangrigel@gmail.com, Min Li, minli.231314@gmail.com

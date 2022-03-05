@@ -1,10 +1,18 @@
+%% 
+% This script shows the example of extracting and ploting the data table harmonized by step2
+
 
 clear
+
+%%
 resp_global_z='zstudyriemlogm10_10';
 resp_batch_z='zglobalriemlogm10_10';
+% user can add more variable name in the cell to load
 vars={'freq';'ageRaw';resp_global_z;resp_batch_z};
 T=readsubtable('./result/DPs_riemlogm_44_Barbados1978Malnutrition_zscore.csv',vars);
 
+
+%%
 x(:,1)=T.freq;
 x(:,2)=T.ageRaw;
 
