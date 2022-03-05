@@ -13,7 +13,7 @@ path_geometricMean='./data/norm/refM_riemlogm_global_1564.mat';
 % metadata table of incoming data: metainfo of the data to be gaussianized
 % the table can generate by step0
 % here is the example data for Barbados Malnutrition, which also host on Synapse https://doi.org/10.7303/syn26712979,
-path_table='./data/example/BarbadosMalnutrition/BarbadosMalnutrition.xlsx';
+path_table='./result/BarbadosMalnutrition.xlsx';
 % path of folder to save the result
 path_out='./result/';
 
