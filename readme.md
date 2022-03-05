@@ -40,17 +40,17 @@ you can chekc the example with: *.\data\example\DataInfo_Barbados1978Malnutritio
 
 **step 1**: run step1_preprocess_`<typeDPs>`.m  to get the DPs
 
-input: metadata table  Ⅰ
+input: metadata table  Ⅰ   
 output: DPs table Ⅱ which including log-spectrum /Riemannian vectorized corss-spectrum DPs +meta data
 
 **step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs
 
-input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)
+input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)    
 output: z-score table Ⅲ which including  z-scores (global z-scores) and cz-scores (batch corrected z-scores)
 
 **step 3**: run step3_visualize_`<typeDPs>`.m to visualize the scatter plot of z-scores
 
-input:  z-score table Ⅲ
+input:  z-score table Ⅲ       
 output: z-score scatter plot
 
 Note:
