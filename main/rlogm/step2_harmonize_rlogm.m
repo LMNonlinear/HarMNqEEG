@@ -21,12 +21,12 @@ path_out='.\result\';
 % load neccesary variables for the prediction, which defined in training progress
 %   tregs: saved regression model for training data table
 %   level: levels definition of the hamonization model
+%   batch: batch definition, which has to match the norm file load above,
+%          which fixed to {'study'} as the result of model compare in the paper
 %   resp: responses to be regressed
-%   opt: options of the regression parameter
-mnhs=load(path_norm,'tregs','level','resp','opt');
+%   opt: options of the harmonization and regression parameter
+mnhs=load(path_norm,'tregs','level','batch','resp','opt');
 % set parameter in the structure for mnh_zmap_predict
-% batch definition, which has to match the norm file load above
-mnhs.batch={'study'}; 
 mnhs.path_table=path_Dps;
 mnhs.path_out=path_out;
 % define which exsit batch to be used as the reference batch of incoming data
