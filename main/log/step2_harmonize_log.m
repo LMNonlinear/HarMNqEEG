@@ -24,7 +24,6 @@ path_out='.\result\';
 %   opt: options of the harmonization and regression parameter
 mnhs=load(path_norm,'tregs','level','batch','resp','opt');
 % batch definition, which has to match the norm file load above
-mnhs.batch={'study'};
 mnhs.path_table=path_Dps;
 mnhs.path_out=path_out;
 % define which exsit batch to be used as the reference batch of incoming data
