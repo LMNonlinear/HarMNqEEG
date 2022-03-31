@@ -74,8 +74,8 @@ Note:
    'neuroscan Colombia'
    'nvx136 Russia'
 
-## Example Data Description'ANTNeuro Malaysia'
-
+## Example Data Description
+'ANTNeuro Malaysia'
 'BrainAmpDC Chengdu'
 'BrainAmpMRplus Chongqing'
 'BrainAmpMRplus Germany'
