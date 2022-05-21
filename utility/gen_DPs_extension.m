@@ -32,7 +32,7 @@ end
 switch typeLog
     case {'log'}
         warning('if needs cross parts, need matrix log(logm)')
-        logfun=@log10;
+        logfun=@log;
     case {'logm'}
         logfun=@logmtensor;
     case {'riemlogm'}
@@ -101,7 +101,7 @@ elseif sum(strcmp(func2str(logfun),{'vecRieMap','logmtensor'}))>0 && ~isempty(ba
             [veclogS(:,idx_batch,i)] = logfun(fCrossMHS(:,:,idx_batch,i),refM(:,:,ibatch,i)); % num_voxel , Nsubject , frequency
         end
     end
-elseif strcmp(func2str(logfun),{'log10'})
+elseif strcmp(func2str(logfun),{'log'})
     idx_diag=repmat(diag(true(num_channel,1)),[1,1,num_subj,num_freq]);
     num_voxel=num_channel;
     fCrossMHS=reshape(fCrossMHS(idx_diag),[num_voxel,num_subj,num_freq]);
