@@ -90,7 +90,7 @@ Note:
 'neuroscan Colombia'
 'nvx136 Russia'
 
-The data is available [here](https://doi.org/10.7303/syn26712979 "Data on synapse"), extract data folder to the root of the repository. The data include:
+The data is available on Synapse https://doi.org/10.7303/syn26712979, extract data folder to the root of the repository. The data include:
 
 1. **example**:
    a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which got by running **the data_gatherer.m**
@@ -112,6 +112,7 @@ The data is available [here](https://doi.org/10.7303/syn26712979 "Data on synaps
 [3] Schneider-Luftman, D., Walden, A.T., 2016. Partial Coherence Estimation via Spectral Matrix Shrinkage under Quadratic Loss. IEEE Trans. Signal Process. 64, 5767–5777. https://doi.org/10.1109/TSP.2016.2582464
 
 Author: Ying Wang, Min Li, Pedro Antonio Valdés-Sosa.
+please cite: Li, M., Wang, Y., Lopez-Naranjo, C., Hu, S., Reyes, R.C.G., Paz-Linares, D., Areces-Gonzalez, A., Hamid, A.I.A., Evans, A.C., Savostyanov, A.N., Calzada-Reyes, A., Villringer, A., Tobon-Quintero, C.A., Garcia-Agustin, D., Yao, D., Dong, L., Aubert-Vazquez, E., Reza, F., Razzaq, F.A., Omar, H., Abdullah, J.M., Galler, J.R., Ochoa-Gomez, J.F., Prichep, L.S., Galan-Garcia, L., Morales-Chacon, L., Valdes-Sosa, M.J., Tröndle, M., Zulkifly, M.F.M., Abdul Rahman, M.R.B., Milakhina, N.S., Langer, N., Rudych, P., Koenig, T., Virues-Alba, T.A., Lei, X., Bringas-Vega, M.L., Bosch-Bayard, J.F., Valdes-Sosa, P.A., 2022. Harmonized-Multinational qEEG norms (HarMNqEEG). NeuroImage 256, 119190. https://doi.org/10.1016/j.neuroimage.2022.119190
 
 Create Time: 2021
 
