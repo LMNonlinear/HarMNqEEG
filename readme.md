@@ -33,37 +33,37 @@ notes:
 1. check the electrodes name and electrodes order used in data_gatherer.m
 2. names shoule be encrypted before generate the corss-spectrum tensor.
 
-```
+
 **step 0**: generate metadata table based on the calcuated cross-spectrum tensor.
 
-input: corss-spectrum tensor path
+> input: corss-spectrum tensor path  
 output: metadata table Ⅰ
 
 you can chekc the example with: *.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
 
 **step 1**: run step1_preprocess_`<typeDPs>`.m  to get the DPs
 
-input: metadata table  Ⅰ   
+> input: metadata table  Ⅰ   
 output: DPs table Ⅱ which including log-spectrum /Riemannian vectorized corss-spectrum DPs +meta data
 
 **step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs
 
-input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)    
+> input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)    
 output: z-score table Ⅲ which including  z-scores (global z-scores) and cz-scores (batch corrected z-scores)
 
 **step 3**: run step3_visualize_`<typeDPs>`.m to visualize the scatter plot of z-scores
 
-input:  z-score table Ⅲ       
+> input:  z-score table Ⅲ       
 output: z-score scatter plot
-```
+
 
 Note:
-```
+
 1. `<typeDPs>` including traditional log-spectrum DPs (`log`) and Hermitian Riemannian DPs (`riemlogm`).
 2. In **step 2**, need to select one closed study for calculating batch harmonized z-scores and DPs.
    The name of existed batch reference are:
 
-   'ANTNeuro Malaysia'  
+>   'ANTNeuro Malaysia'  
    'BrainAmpDC Chengdu'  
    'BrainAmpMRplus Chongqing'  
    'BrainAmpMRplus Germany'  
@@ -77,7 +77,7 @@ Note:
    'actiChamp Russia'  
    'neuroscan Colombia'  
    'nvx136 Russia'  
-```
+
 
 ## Example Data Description
 
@@ -96,18 +96,18 @@ The data is available on Synapse https://doi.org/10.7303/syn26712979, extract da
    In future work, we will provide the function for estimating the batch norms of coming to DPs.
 2. Octave is not fully supported yet.
 
-```
-[1] Github location of the script: https://github.com/CCC-members/BC-V_group_stat/blob/master/data_gatherer.m
+## Reference:  
 
-[2] Bringas Vega, M.L., Guo, Y., Tang, Q., Razzaq, F.A., Calzada Reyes, A., Ren, P., Paz Linares, D., Galan Garcia, L., Rabinowitz, A.G., Galler, J.R., Bosch-Bayard, J., Valdes Sosa, P.A., 2019. An Age-Adjusted EEG Source Classifier Accurately Detects School-Aged Barbadian Children That Had Protein Energy Malnutrition in the First Year of Life. Front. Neurosci. 13, 1222. https://doi.org/10.3389/fnins.2019.01222
-
+>[1] Github location of the script: https://github.com/CCC-members/BC-V_group_stat/blob/master/data_gatherer.m  
+[2] Bringas Vega, M.L., Guo, Y., Tang, Q., Razzaq, F.A., Calzada Reyes, A., Ren, P., Paz Linares, D., Galan Garcia, L., Rabinowitz, A.G., Galler, J.R., Bosch-Bayard, J., Valdes Sosa, P.A., 2019. An Age-Adjusted EEG Source Classifier Accurately Detects School-Aged Barbadian Children That Had Protein Energy Malnutrition in the First Year of Life. Front. Neurosci. 13, 1222. https://doi.org/10.3389/fnins.2019.01222  
 [3] Schneider-Luftman, D., Walden, A.T., 2016. Partial Coherence Estimation via Spectral Matrix Shrinkage under Quadratic Loss. IEEE Trans. Signal Process. 64, 5767–5777. https://doi.org/10.1109/TSP.2016.2582464
-```
+
 
 Author: Ying Wang, Min Li, Pedro Antonio Valdés-Sosa.  
 
 
-Please cite: Li, M., Wang, Y., Lopez-Naranjo, C., Hu, S., Reyes, R.C.G., Paz-Linares, D., Areces-Gonzalez, A., Hamid, A.I.A., Evans, A.C., Savostyanov, A.N., Calzada-Reyes, A., Villringer, A., Tobon-Quintero, C.A., Garcia-Agustin, D., Yao, D., Dong, L., Aubert-Vazquez, E., Reza, F., Razzaq, F.A., Omar, H., Abdullah, J.M., Galler, J.R., Ochoa-Gomez, J.F., Prichep, L.S., Galan-Garcia, L., Morales-Chacon, L., Valdes-Sosa, M.J., Tröndle, M., Zulkifly, M.F.M., Abdul Rahman, M.R.B., Milakhina, N.S., Langer, N., Rudych, P., Koenig, T., Virues-Alba, T.A., Lei, X., Bringas-Vega, M.L., Bosch-Bayard, J.F., Valdes-Sosa, P.A., 2022. Harmonized-Multinational qEEG norms (HarMNqEEG). NeuroImage 256, 119190. https://doi.org/10.1016/j.neuroimage.2022.119190
+Please cite: 
+>Li, M., Wang, Y., Lopez-Naranjo, C., Hu, S., Reyes, R.C.G., Paz-Linares, D., Areces-Gonzalez, A., Hamid, A.I.A., Evans, A.C., Savostyanov, A.N., Calzada-Reyes, A., Villringer, A., Tobon-Quintero, C.A., Garcia-Agustin, D., Yao, D., Dong, L., Aubert-Vazquez, E., Reza, F., Razzaq, F.A., Omar, H., Abdullah, J.M., Galler, J.R., Ochoa-Gomez, J.F., Prichep, L.S., Galan-Garcia, L., Morales-Chacon, L., Valdes-Sosa, M.J., Tröndle, M., Zulkifly, M.F.M., Abdul Rahman, M.R.B., Milakhina, N.S., Langer, N., Rudych, P., Koenig, T., Virues-Alba, T.A., Lei, X., Bringas-Vega, M.L., Bosch-Bayard, J.F., Valdes-Sosa, P.A., 2022. Harmonized-Multinational qEEG norms (HarMNqEEG). NeuroImage 256, 119190. https://doi.org/10.1016/j.neuroimage.2022.119190
 
 Create Time: 2021
 
