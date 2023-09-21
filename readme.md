@@ -2,7 +2,7 @@
 [![HitCount](https://hits.dwyl.com/LMNonlinear/HarMNqEEG.svg?style=flat-square)](http://hits.dwyl.com/LMNonlinear/HarMNqEEG)
 [![DOI:10.1016/j.neuroimage.2022.119190](http://img.shields.io/badge/DOI-10.1016/j.neuroimage.2022.119190-e9db39.svg)](https://doi.org/10.1016/j.neuroimage.2022.119190)
 
-**HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the multinational norms.**
+**HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the multinational Multivariate EEG development Norm.**
 
 Descriptive parameter surface (DPs):
 
