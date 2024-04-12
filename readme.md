@@ -4,6 +4,9 @@
 
 **HarMNqEEG: provide the MATLAB code for the evaluation of batch harmonized z-scores based on the Multinational Multivariate EEG Norm.**
 
+
+
+
 Descriptive parameter surface (DPs):
 
 ![Descriptive parameter surface.png](image/readme/1641718734951.png "Descriptive parameter surface")
@@ -12,44 +15,52 @@ Z socre values:
 
 ![Z socre values](image/readme/1641719353193.png "Z socre values")
 
+
+The pipeline for calculating the HarMNqEEG norm:
+
+![HarMNqEEG](image/readme/HarMNqEEG.png "HarMNqEEG")
+
+
 ## Installation
 
 1. Extract the ZIP file (or clone the git repository) somewhere you can easily reach it.
 2. Add the HarMNqEEG folder to your path in MATLAB: e.g.
    a. using the "setup" dialogue in MATLAB;
    b. by running the addpath function from your command window or startup script.
-   Note: this package requires Matlab R2021a or latter since the gridded norm from non-uniform samples utilizes `griddedInterpolant` to interpolate multiple sets of values on the same grid for the incoming sample.
+Note: this package requires Matlab R2021a or later since the gridded norm (fitted with fast nonuniform multivariate local polynomial regression [4]) utilizes `griddedInterpolant` to interpolate multiple sets of values for the incoming samples.
 
 ## Usage
 
+This repository offers the EEG harmonization with the norm we archived on Synapse (https://doi.org/10.7303/syn26712979).
+
 Folder main contains the main process code including:
 
-Generate corss-spectrum tensor use the code data_gatherer.m [1].
+Generate cross-spectrum tensor using the code data_gatherer.m [1].
 
-The  data_gatherer.m and one example named generate_cross_spectrum.m in the external folder.
+The data_gatherer.m and one example named generate_cross_spectrum.m in the external folder.
 
 notes:
 
 1. check the electrodes name and electrodes order used in data_gatherer.m
-2. names shoule be encrypted before generate the corss-spectrum tensor.
+2. names should be encrypted before generating the cross-spectrum tensor.
 
 
-**step 0**: generate metadata table based on the calcuated cross-spectrum tensor.
+**step 0**: generate metadata table based on the calculated cross-spectrum tensor.
 
-> input: corss-spectrum tensor path  
+> input: cross-spectrum tensor path  
 output: metadata table Ⅰ
 
-you can chekc the example with: *.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
+you can check the example with: *.\data\example\DataInfo_Barbados1978Malnutrition_44.csv*
 
 **step 1**: run step1_preprocess_`<typeDPs>`.m  to get the DPs
 
 > input: metadata table  Ⅰ   
-output: DPs table Ⅱ which including log-spectrum /Riemannian vectorized corss-spectrum DPs +meta data
+output: DPs table Ⅱ which includes log-spectrum /Riemannian vectorized cross-spectrum DPs +meta data
 
 **step 2**: run step2_harmonize_`<typeDPs>`.m to get the global z-scores, batch harmonized z-scores and batch harmonized DPs
 
 > input:  DPs table Ⅱ+{ study name, batch correction reference study name}(the reference batch study name as below)    
-output: z-score table Ⅲ which including  z-scores (global z-scores) and cz-scores (batch corrected z-scores)
+output: z-score table Ⅲ which includes  z-scores (global z-scores) and cz-scores (batch-corrected z-scores)
 
 **step 3**: run step3_visualize_`<typeDPs>`.m to visualize the scatter plot of z-scores
 
@@ -60,8 +71,8 @@ output: z-score scatter plot
 Note:
 
 1. `<typeDPs>` including traditional log-spectrum DPs (`log`) and Hermitian Riemannian DPs (`riemlogm`).
-2. In **step 2**, need to select one closed study for calculating batch harmonized z-scores and DPs.
-   The name of existed batch reference are:
+2. In **step 2**, we have to select one closed study for calculating batch harmonized z-scores and DPs.
+   The names of existing batch references are:
 
 >   'ANTNeuro Malaysia'  
    'BrainAmpDC Chengdu'  
@@ -77,16 +88,16 @@ Note:
    'actiChamp Russia'  
    'neuroscan Colombia'  
    'nvx136 Russia'  
-3. Based on model comparison, the norm is a variable of age and frequency, so it shows as an EEG development surface for narrow-band EEG DPs.
+3. Based on the model comparison, the norm is a variable of age and frequency, so it shows as an EEG development surface for narrow-band EEG DPs.
 
 ## Example Data Description
 
-The data is available on Synapse https://doi.org/10.7303/syn26712979, extract data folder to the root of the repository. The data include:
+The data is available on Synapse https://doi.org/10.7303/syn26712979, extract the data folder to the root of the repository. The data include:
 
 1. **example**:
-   a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which got by running **the data_gatherer.m**
-   Note: take care with the EEG epoch which will use in step2 for Hermitian positive defined (HPD) matrix regularization[3].
-   the path of the cross-spectrum should include the path and name of .mat file which will be used for load data in **step 2**.
+   a. BarbadosMalnutrition contains the cross-spectrum tensor of Barbados 1978 malnutrition dataset [2] which can be obtrained by running **the data_gatherer.m**
+   Note: take care with the EEG epoch which will be used in step2 for Hermitian positive defined (HPD) matrix regularization[3].
+   the path of the cross-spectrum should include the path and name of .mat file which will be used for loading data in **step 2**.
 2. **norm**:
    Including norms norm_`<typeDPs>`_`<model>`_`<batch>`.mat for calculating the global z-scores and batch harmonized z-scores for `<typeDPs>` and the geometric mean for mapping the cross-spectrum tensor to tangent vector space in step and this only need for Hermitian Riemannian DPs Preprocessing.
 
@@ -96,11 +107,24 @@ The data is available on Synapse https://doi.org/10.7303/syn26712979, extract da
    In future work, we will provide the function for estimating the batch norms of coming to DPs.
 2. Octave is not fully supported yet.
 
+# Future work
+
+We are excited to explore further collaboration opportunities and contribute to the advancement of norms, methods, and applications in our field. Our goal is to continuously update and improve existing practices, while also exploring other modalities (ECG, MEG, iEEG, fMRI, et al.) and transforming ideas into actionable solutions.
+
+If you are interested in collaborating or have any suggestions, please feel free to reach out to us.
+
+
+Generalized distributed harmonized normative modeling:
+
+![Generalized distributed harmonized normative modeling](image/readme/GNM.png "Generalized distributed harmonized normative modeling")
+
+
 ## Reference:  
 
 >[1] Github location of the script: https://github.com/CCC-members/BC-V_group_stat/blob/master/data_gatherer.m  
 [2] Bringas Vega, M.L., Guo, Y., Tang, Q., Razzaq, F.A., Calzada Reyes, A., Ren, P., Paz Linares, D., Galan Garcia, L., Rabinowitz, A.G., Galler, J.R., Bosch-Bayard, J., Valdes Sosa, P.A., 2019. An -Adjusted EEG Source Classifier Accurately Detects School-d Barbadian Children That Had Protein Energy Malnutrition in the First Year of Life. Front. Neurosci. 13, 1222. https://doi.org/10.3389/fnins.2019.01222  
 [3] Schneider-Luftman, D., Walden, A.T., 2016. Partial Coherence Estimation via Spectral Matrix Shrinkage under Quadratic Loss. IEEE Trans. Signal Process. 64, 5767–5777. https://doi.org/10.1109/TSP.2016.2582464
+[4] Wang, Y., Li, M., Paz-Linares, D., Vega, M. L. B., & Valdés-Sosa, P. A. (2022). FKreg: A MATLAB toolbox for fast Multivariate Kernel Regression. arXiv:2204.07716 [Cs, Stat]. http://arxiv.org/abs/2204.07716
 
 
 Author: Ying Wang, Min Li, Pedro Antonio Valdés-Sosa.  
