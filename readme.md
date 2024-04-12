@@ -123,7 +123,7 @@ Generalized distributed harmonized normative modeling:
 
 >[1] Github location of the script: https://github.com/CCC-members/BC-V_group_stat/blob/master/data_gatherer.m  
 [2] Bringas Vega, M.L., Guo, Y., Tang, Q., Razzaq, F.A., Calzada Reyes, A., Ren, P., Paz Linares, D., Galan Garcia, L., Rabinowitz, A.G., Galler, J.R., Bosch-Bayard, J., Valdes Sosa, P.A., 2019. An -Adjusted EEG Source Classifier Accurately Detects School-d Barbadian Children That Had Protein Energy Malnutrition in the First Year of Life. Front. Neurosci. 13, 1222. https://doi.org/10.3389/fnins.2019.01222  
-[3] Schneider-Luftman, D., Walden, A.T., 2016. Partial Coherence Estimation via Spectral Matrix Shrinkage under Quadratic Loss. IEEE Trans. Signal Process. 64, 5767–5777. https://doi.org/10.1109/TSP.2016.2582464
+[3] Schneider-Luftman, D., Walden, A.T., 2016. Partial Coherence Estimation via Spectral Matrix Shrinkage under Quadratic Loss. IEEE Trans. Signal Process. 64, 5767–5777. https://doi.org/10.1109/TSP.2016.2582464  
 [4] Wang, Y., Li, M., Paz-Linares, D., Vega, M. L. B., & Valdés-Sosa, P. A. (2022). FKreg: A MATLAB toolbox for fast Multivariate Kernel Regression. arXiv:2204.07716 [Cs, Stat]. http://arxiv.org/abs/2204.07716
 
 
